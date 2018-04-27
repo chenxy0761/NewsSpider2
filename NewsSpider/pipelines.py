@@ -11,7 +11,7 @@ import jieba.analyse
 from util.con_oracle import Dba
 from NewsSpider.WeatherModel import WeatherModel
 from NewsSpider.items import SinaCommentItem, SinaContentItem, SoGouItem, \
-    SinaInformationItem, SinaTweetsItem, EastItem, WecatItem
+    SinaInformationItem, SinaTweetsItem, EastItem
 
 import sys
 
@@ -174,7 +174,6 @@ class NewsspiderPipeline(object):
                 self.tweets.insert(dict(item))
             except Exception, e:
                 logger.error("SinaTweetsItem <<%s>>" % e)
-
 
     def format_string(self, string):
         """ 去掉字母和数字 """
